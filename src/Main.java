@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int x, y, mass, k;
-        String value;
+        String value ;
         Scanner scanner = new Scanner(System.in);
         Metods metods = new Metods();
         while (true)

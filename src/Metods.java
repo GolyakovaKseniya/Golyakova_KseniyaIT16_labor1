@@ -221,7 +221,7 @@ public class Metods
             {
                 System.out.println("Вы угадали!");
             }
-            if(x!= y)
+            if(x!=y)
             {
                 System.out.println("Вы не угадали загаданное число, попробуйте снова ");
             }
