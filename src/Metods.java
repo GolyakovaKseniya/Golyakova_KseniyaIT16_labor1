@@ -214,7 +214,7 @@ public class Metods
         y = random.nextInt(0,9);
         do
         {
-            System.out.println("Введите число от 1 до 9 - ");
+            System.out.println("Введите число от 1 до 9: ");
             x = scanner.nextInt();
             count++;
             if(x == y)
