@@ -6,7 +6,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int x, y, l, k;
+        int x, y, mass, k;
         String value;
         Scanner scanner = new Scanner(System.in);
         Metods metods = new Metods();
@@ -200,9 +200,9 @@ public class Main {
                 {
                     System.out.println("Задача 4.2: ");
                     System.out.println("Сколько хотите ввести чисел?");
-                    l = scanner.nextInt();
-                    int[] arr = new int[l];
-                    for (int i = 0; i < l; i++)
+                    mass = scanner.nextInt();
+                    int[] arr = new int[mass];
+                    for (int i = 0; i < mass; i++)
                     {
                         System.out.println("Введите число " + (i + 1) + ": ");
                         arr[i] = scanner.nextInt();
@@ -218,9 +218,9 @@ public class Main {
                     int pos;
                     System.out.println("Задача 4.4: ");
                     System.out.println("Сколько хотите ввести чисел?");
-                    l = scanner.nextInt();
-                    int[] arr = new int[l];
-                    for (int i = 0; i < l; i++)
+                    mass = scanner.nextInt();
+                    int[] arr = new int[mass];
+                    for (int i = 0; i < mass; i++)
                     {
                         System.out.print("Введите число " + (i + 1) + ": ");
                         arr[i] = scanner.nextInt();
@@ -237,9 +237,9 @@ public class Main {
                 {
                     System.out.println("Задача 4.6");
                     System.out.println("Сколько хотите ввести чисел?");
-                    l = scanner.nextInt();
-                    int[] arr = new int[l];
-                    for (int i = 0; i < l; i++)
+                    mass = scanner.nextInt();
+                    int[] arr = new int[mass];
+                    for (int i = 0; i < mass; i++)
                     {
                         System.out.println("Введите число " + (i + 1) + ": ");
                         arr[i] = scanner.nextInt();
@@ -252,8 +252,8 @@ public class Main {
                 {
                     System.out.println("Задача 4.8");
                     System.out.println("Сколько хотите ввести чисел в 1 массив?");
-                    l = scanner.nextInt();
-                    int[] arr1 = new int[l];
+                    mass = scanner.nextInt();
+                    int[] arr1 = new int[mass];
                     for (int i = 0; i < arr1.length; i++)
                     {
                         System.out.println("Введите число " + (i + 1) + ": ");
@@ -275,9 +275,9 @@ public class Main {
                 {
                     System.out.println("Задача 4.10");
                     System.out.println("Сколько хотите ввести чисел: ");
-                    l = scanner.nextInt();
-                    int[] arr = new int[l];
-                    for (int i = 0; i < l; i++)
+                    mass = scanner.nextInt();
+                    int[] arr = new int[mass];
+                    for (int i = 0; i < mass; i++)
                     {
                         System.out.println("Введите число " + (i + 1) + ": ");
                         arr[i] = scanner.nextInt();
