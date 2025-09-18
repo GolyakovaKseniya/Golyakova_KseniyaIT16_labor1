@@ -10,7 +10,8 @@ public class Main {
         String value;
         Scanner scanner = new Scanner(System.in);
         Metods metods = new Metods();
-        while (true) {
+        while (true)
+        {
             System.out.println();
             System.out.println("Выберете задачу: ");
             System.out.println("Задача 1.2");
