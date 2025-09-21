@@ -224,7 +224,7 @@ public class Metods
                 }
                 else
                 {
-                    System.out.println("Ошибка, введите число от 0 до 9!");
+                    System.out.println("Ошибка, нужно ввести число от 0 до 9!");
                 }
             }
             count++;

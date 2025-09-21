@@ -325,7 +325,7 @@ public class Main {
             }
             else
             {
-                System.out.println("Ошибка, введите положительное число!");
+                System.out.println("Ошибка, нужно ввести положительное число!");
             }
         }
     }
