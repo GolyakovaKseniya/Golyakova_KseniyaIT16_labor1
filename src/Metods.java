@@ -110,38 +110,38 @@ public class Metods
 
         switch (x)
         {
-            case "понедельник":
+            case "понедельник", "Понедельник":
             {
-                System.out.println("понедельник");
+                System.out.println("Понедельник");
             }
-            case "вторник":
+            case "вторник", "Вторник":
             {
-                System.out.println("вторник");
+                System.out.println("Вторник");
             }
-            case "среда":
+            case "среда", "Среда":
             {
-                System.out.println("среда");
+                System.out.println("Среда");
             }
-            case "четверг":
+            case "четверг", "Четверг":
             {
-                System.out.println("четверг");
+                System.out.println("Четверг");
             }
-            case "пятница":
+            case "пятница","Пятница":
             {
-                System.out.println("пятница");
+                System.out.println("Пятница");
             }
-            case "суббота":
+            case "суббота", "Суббота":
             {
-                System.out.println("суббота");
+                System.out.println("Суббота");
             }
-            case "воскресенье":
+            case "воскресенье", "Воскресенье":
             {
-                System.out.println("воскресенье");
+                System.out.println("Воскресенье");
                 break;
             }
             default:
             {
-                System.out.println("это не день недели!");
+                System.out.println("Это не день недели!");
                 break;
             }
         }
@@ -214,8 +214,19 @@ public class Metods
         y = random.nextInt(0,9);
         do
         {
-            System.out.println("Введите число от 1 до 9: ");
-            x = scanner.nextInt();
+            System.out.println("Введите число от 0 до 9: ");
+            while(true)
+            {
+                x = scanner.nextInt();
+                if(x >= 0 && x <= 9)
+                {
+                    break;
+                }
+                else
+                {
+                    System.out.println("Ошибка, введите число от 0 до 9!");
+                }
+            }
             count++;
             if(x == y)
             {
@@ -241,11 +252,6 @@ public class Metods
     }
     public int[] add (int[] arr, int x, int pos)
     {
-        if(pos<0 || pos > arr.length)
-        {
-            System.out.println("Ошибка, индекс не может быть отрицательным или больше длины массива! ");
-            return arr;
-        }
         int[] add = new int[arr.length + 1];
         for (int i = 0; i < pos; i++)
         {

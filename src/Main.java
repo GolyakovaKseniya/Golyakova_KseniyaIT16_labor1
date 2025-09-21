@@ -6,7 +6,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int x, y, mass, k;
+        int x, y, mass, count;
         String value ;
         Scanner scanner = new Scanner(System.in);
         Metods metods = new Metods();
@@ -34,7 +34,7 @@ public class Main {
             System.out.println("Задача 4.6");
             System.out.println("Задача 4.8");
             System.out.println("Задача 4.10");
-            System.out.println("0 - ВЫХОД");
+            System.out.println("0 - выход");
             System.out.print("Ваш выбор: ");
             value = scanner.next();
             switch (value)
@@ -42,17 +42,18 @@ public class Main {
                 case "1.2":
                 {
                     System.out.println("Задача 1.2: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
+                    x = Math.abs(x);
                     int first = metods.sumLastNums(x);
-                    System.out.println("Сумма двух последних знаков числа x - " + first);
+                    System.out.println("Сумма двух последних знаков числа x:  " + first);
                     break;
                 }
                 case "1.4":
                 {
                     System.out.println("Задача 1.4: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
                     boolean second = metods.isPositive(x);
                     System.out.println("Ответ задачи №4 - " + second);
                     break;
@@ -61,7 +62,7 @@ public class Main {
                 {
                     System.out.println("Задача 1.6");
                     char X;
-                    System.out.println("Введите символ X - ");
+                    System.out.print("Введите символ X: ");
                     X = scanner.next().charAt(0);
                     boolean three = metods.isUpperCase(X);
                     System.out.println("Ответ задачи №6 - " + three);
@@ -71,10 +72,10 @@ public class Main {
                 {
                     System.out.println("Задача 1.8: ");
                     int a, b;
-                    System.out.println("Введите число а - ");
-                    a = scanner.nextInt();
-                    System.out.println("Введите число b - ");
-                    b = scanner.nextInt();
+                    System.out.print("Введите число а: ");
+                    a = getInput(scanner);
+                    System.out.print("Введите число b: ");
+                    b = getInput(scanner);
                     boolean four = metods.isDivisor(a, b);
                     System.out.println("Ответ на задачу №8 " + four);
                     break;
@@ -83,10 +84,11 @@ public class Main {
                 {
                     System.out.println("Задача 1.10: ");
                     int summa = 0, number;
+                    System.out.println("Введите 5 чисел: ");
                     for (int i = 1; i <= 5; i++)
                     {
-                        System.out.println("Введите число - ");
-                        number = scanner.nextInt();
+                        System.out.print("Введите число: ");
+                        number = getInput(scanner);
                         summa = metods.lastNumSum(summa, number);
                     }
                     System.out.println("Сумма цифр 5-ти чисел из разряда единиц равна: " + summa);
@@ -95,10 +97,10 @@ public class Main {
                 case "2.2":
                 {
                     System.out.println("Задача 2.2: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
-                    System.out.println("Введите число y - ");
-                    y = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
+                    System.out.print("Введите число y: ");
+                    y = getInput(scanner);
                     double second2 = metods.safeDiv(x, y);
                     System.out.println("Частное деления x на y равно: " + second2);
                     break;
@@ -106,10 +108,10 @@ public class Main {
                 case "2.4":
                 {
                     System.out.println("Задача 2.4: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
-                    System.out.println("Введите число y - ");
-                    y = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
+                    System.out.print("Введите число y: ");
+                    y = getInput(scanner);
                     String four2 = metods.makeDecision(x, y);
                     System.out.println("Строка со знаком операции: " + four2);
                     break;
@@ -118,12 +120,12 @@ public class Main {
                 {
                     System.out.println("Задача 2.6: ");
                     int z;
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
-                    System.out.println("Введите число y - ");
-                    y = scanner.nextInt();
-                    System.out.println("Введите число z - ");
-                    z = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
+                    System.out.print("Введите число y: ");
+                    y = getInput(scanner);
+                    System.out.print("Введите число z: ");
+                    z = getInput(scanner);
                     boolean six = metods.sum3(x, y, z);
                     System.out.println("Результат: " + six);
                     break;
@@ -131,23 +133,17 @@ public class Main {
                 case "2.8":
                 {
                     System.out.println("Задача 2.8: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
-                    if (x > 0)
-                    {
-                        String eight = metods.age(x);
-                        System.out.println("Результат: " + eight);
-                    } else
-                    {
-                        System.out.println("Ошибка, введите положительно число!");
-                    }
+                    System.out.print("Введите число x: ");
+                    x = test(scanner);
+                    String eight = metods.age(x);
+                    System.out.println("Результат: " + eight);
                     break;
                 }
                 case "2.10":
                 {
                     System.out.println("Задача 2.10: ");
                     String day;
-                    System.out.println("Введите день недели - ");
+                    System.out.print("Введите день недели: ");
                     day = scanner.next();
                     System.out.println("Результат: ");
                     metods.printDay(day);
@@ -156,8 +152,8 @@ public class Main {
                 case "3.2":
                 {
                     System.out.println("Задача 3.2: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
                     String result = metods.reverseListNums(x);
                     System.out.println("Результат: " + result);
                     break;
@@ -165,10 +161,10 @@ public class Main {
                 case "3.4":
                 {
                     System.out.println("Задача 3.4: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
-                    System.out.println("Введите число степени y - ");
-                    y = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
+                    System.out.print("Введите число степени y: ");
+                    y = getInput(scanner);
                     double pow = metods.pow(x, y);
                     System.out.println("Результат: " + pow);
                     break;
@@ -176,8 +172,9 @@ public class Main {
                 case "3.6":
                 {
                     System.out.println("Задача 3.6: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
+                    x = Math.abs(x);
                     boolean equal = metods.equalNum(x);
                     System.out.println("Результат: " + equal);
                     break;
@@ -185,8 +182,8 @@ public class Main {
                 case "3.8":
                 {
                     System.out.println("Задача 3.8: ");
-                    System.out.println("Введите число x - ");
-                    x = scanner.nextInt();
+                    System.out.print("Введите число x: ");
+                    x = getInput(scanner);
                     System.out.println("Результат: ");
                     metods.leftTriangle(x);
                     break;
@@ -200,16 +197,16 @@ public class Main {
                 case "4.2":
                 {
                     System.out.println("Задача 4.2: ");
-                    System.out.println("Сколько хотите ввести чисел?");
-                    mass = scanner.nextInt();
+                    System.out.print("Сколько хотите ввести чисел: ");
+                    mass = test(scanner);
                     int[] arr = new int[mass];
                     for (int i = 0; i < mass; i++)
                     {
-                        System.out.println("Введите число " + (i + 1) + ": ");
-                        arr[i] = scanner.nextInt();
+                        System.out.print("Введите число " + (i + 1) + ": ");
+                        arr[i] = getInput(scanner);
                     }
-                    System.out.println("Индекс последнего вхождения какого числа хотите вывести?");
-                    x = scanner.nextInt();
+                    System.out.print("Индекс последнего вхождения какого числа хотите вывести: ");
+                    x = getInput(scanner);
                     int last = metods.findLast(arr, x);
                     System.out.println("Индекс последнего вхождения числа  - " + last);
                     break;
@@ -218,73 +215,89 @@ public class Main {
                 {
                     int pos;
                     System.out.println("Задача 4.4: ");
-                    System.out.println("Сколько хотите ввести чисел?");
-                    mass = scanner.nextInt();
+                    System.out.print("Сколько хотите ввести чисел: ");
+                    mass = test(scanner);
                     int[] arr = new int[mass];
                     for (int i = 0; i < mass; i++)
                     {
                         System.out.print("Введите число " + (i + 1) + ": ");
-                        arr[i] = scanner.nextInt();
+                        arr[i] = getInput(scanner);
                     }
                     System.out.print("Какое хотите вставить число в новый массив: ");
-                    x = scanner.nextInt();
+                    x = getInput(scanner);
                     System.out.print("На какую позицию вы хотите его вставить: ");
-                    pos = scanner.nextInt();
+                    pos = test(scanner);
                     int[] add = metods.add(arr, x, pos);
-                    System.out.println("Новый массив: " + Arrays.toString(add));
+                    System.out.print("Новый массив: ");
+                    for(int i = 0; i<add.length; i++)
+                    {
+                        System.out.print(add[i] + " ");
+                    }
+                    System.out.println();
                     break;
                 }
                 case "4.6":
                 {
                     System.out.println("Задача 4.6");
-                    System.out.println("Сколько хотите ввести чисел?");
-                    mass = scanner.nextInt();
+                    System.out.print("Сколько хотите ввести чисел: ");
+                    mass = test(scanner);
                     int[] arr = new int[mass];
                     for (int i = 0; i < mass; i++)
                     {
-                        System.out.println("Введите число " + (i + 1) + ": ");
-                        arr[i] = scanner.nextInt();
+                        System.out.print("Введите число " + (i + 1) + ": ");
+                        arr[i] = getInput(scanner);
                     }
-                    System.out.println("Измененный массив: ");
+                    System.out.print("Измененный массив: ");
                     metods.reverse(arr);
+                    System.out.println();
                     break;
                 }
                 case "4.8":
                 {
                     System.out.println("Задача 4.8");
-                    System.out.println("Сколько хотите ввести чисел в 1 массив?");
-                    mass = scanner.nextInt();
+                    System.out.print("Сколько хотите ввести чисел в 1 массив: ");
+                    mass = test(scanner);
                     int[] arr1 = new int[mass];
                     for (int i = 0; i < arr1.length; i++)
                     {
-                        System.out.println("Введите число " + (i + 1) + ": ");
-                        arr1[i] = scanner.nextInt();
+                        System.out.print("Введите число " + (i + 1) + ": ");
+                        arr1[i] = getInput(scanner);
                     }
-                    System.out.println("Сколько хотите ввести чисел во 2 массив?");
-                    k = scanner.nextInt();
-                    int[] arr2 = new int[k];
+                    System.out.print("Сколько хотите ввести чисел во 2 массив: ");
+                    count = test(scanner);
+                    int[] arr2 = new int[count];
                     for (int i = 0; i < arr2.length; i++)
                     {
-                        System.out.println("Введите число " + (i + 1) + ": ");
-                        arr2[i] = scanner.nextInt();
+                        System.out.print("Введите число " + (i + 1) + ": ");
+                        arr2[i] = getInput(scanner);
                     }
                     int[] concat = metods.concat(arr1, arr2);
-                    System.out.println("Новый массив: " + Arrays.toString(concat));
+                    System.out.print("Новый массив: ");
+                    for(int i = 0; i<concat.length; i++)
+                    {
+                        System.out.print(concat[i] + " ");
+                    }
+                    System.out.println();
                     break;
                 }
                 case "4.10":
                 {
                     System.out.println("Задача 4.10");
-                    System.out.println("Сколько хотите ввести чисел: ");
-                    mass = scanner.nextInt();
+                    System.out.print("Сколько хотите ввести чисел: ");
+                    mass = test(scanner);
                     int[] arr = new int[mass];
                     for (int i = 0; i < mass; i++)
                     {
-                        System.out.println("Введите число " + (i + 1) + ": ");
-                        arr[i] = scanner.nextInt();
+                        System.out.print("Введите число " + (i + 1) + ": ");
+                        arr[i] = getInput(scanner);
                     }
                     int[] arr2 = metods.deleteNegative(arr);
-                    System.out.println("Новый массив: " + Arrays.toString(arr2));
+                    System.out.print("Новый массив: ");
+                    for(int i = 0; i<arr2.length; i++)
+                    {
+                        System.out.print(arr2[i] + " ");
+                    }
+                    System.out.println();
                     break;
                 }
                 case "0":
@@ -300,4 +313,38 @@ public class Main {
             }
         }
     }
+    private static int test(Scanner scanner)
+    {
+        int number;
+        while(true)
+        {
+            number = scanner.nextInt();
+            if(number > 0)
+            {
+                return number;
+            }
+            else
+            {
+                System.out.println("Ошибка, введите положительное число!");
+            }
+        }
+    }
+    private static int getInput(Scanner scanner)
+    {
+        int number;
+        while(true)
+        {
+            if(scanner.hasNextInt())
+            {
+                number = scanner.nextInt();
+                return number;
+            }
+            else
+            {
+                System.out.println("Ошибка, введите целое число!");
+                scanner.next();
+            }
+        }
+    }
+
 }
