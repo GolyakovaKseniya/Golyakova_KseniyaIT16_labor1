@@ -55,7 +55,7 @@ public class Main {
                     System.out.print("Введите число x: ");
                     x = getInput(scanner);
                     boolean second = metods.isPositive(x);
-                    System.out.println("Ответ задачи №4 - " + second);
+                    System.out.println("Ответ задачи №4: " + second);
                     break;
                 }
                 case "1.6":

@@ -8,7 +8,7 @@ public class Metods
         int summa;
         int last, penultimate;
         last = x % 10;
-        penultimate = x / 10 % 10;
+        penultimate = x /10 % 10;
         summa = last + penultimate;
         return summa;
     }
