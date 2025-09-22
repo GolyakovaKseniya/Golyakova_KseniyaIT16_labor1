@@ -169,13 +169,20 @@ public class Metods
     public int pow(int x, int y)
     {
         int result=1;
-        for(int i = 0; i<y; i++)
+        if(y > 0)
         {
-            result*= x;
+            for(int i = 0; i<y; i++)
+            {
+                result*= x;
+            }
         }
-        if(y<0)
+        else
         {
-            return 0;
+            for(int i = 0; i<-y; i++)
+            {
+                result*= x;
+            }
+            result = 1/result;
         }
         return result;
     }
