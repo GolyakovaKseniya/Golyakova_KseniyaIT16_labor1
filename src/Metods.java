@@ -5,12 +5,12 @@ public class Metods
 {
     public int sumLastNums(int x)
     {
-        int Summa;
+        int summa;
         int last, penultimate;
         last = x % 10;
         penultimate = x/10%10;
-        Summa = last + penultimate;
-        return Summa;
+        summa = last + penultimate;
+        return summa;
     }
     public boolean isPositive(int x)
     {
