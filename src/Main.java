@@ -183,7 +183,7 @@ public class Main {
                 {
                     System.out.println("Задача 3.8: ");
                     System.out.print("Введите число x: ");
-                    x = getInput(scanner);
+                    x = test(scanner);
                     System.out.println("Результат: ");
                     metods.leftTriangle(x);
                     break;
@@ -318,14 +318,22 @@ public class Main {
         int number;
         while(true)
         {
-            number = scanner.nextInt();
-            if(number > 0)
+            if(scanner.hasNextInt())
             {
-                return number;
+                number = scanner.nextInt();
+                if(number > 0)
+                {
+                    return number;
+                }
+                else
+                {
+                    System.out.println("Ошибка, нужно ввести положительное число!");
+                }
             }
             else
             {
-                System.out.println("Ошибка, нужно ввести положительное число!");
+                System.out.println("Ошибка, нужно ввести целое число!");
+                scanner.next();
             }
         }
     }
