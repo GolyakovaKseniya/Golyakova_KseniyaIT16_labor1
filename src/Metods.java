@@ -1,10 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Metods
-{
-    public int sumLastNums(int x)
-    {
+public class Metods {
+    public int sumLastNums(int x) {
         int summa;
         int last, penultimate;
         last = x % 10;
@@ -12,295 +10,215 @@ public class Metods
         summa = last + penultimate;
         return summa;
     }
-    public boolean isPositive(int x)
-    {
-        if (x > 0)
-        {
+    public boolean isPositive(int x) {
+        if (x > 0) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
-    public  boolean isUpperCase(char x)
-    {
+    public  boolean isUpperCase(char x) {
+
         return (x >= 'A' && x <= 'Z');
     }
-    public boolean isDivisor(int a, int b)
-    {
-        if((a % b == 0 && b!= 0) || (b % a == 0 && a!=0))
-        {
+    public boolean isDivisor(int a, int b) {
+        if((a % b == 0 && b!= 0) || (b % a == 0 && a!=0)) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
-    public int lastNumSum(int a, int b)
-    {
+    public int lastNumSum(int a, int b) {
+
         return (a%10) + (b%10);
     }
-    public double safeDiv(int x, int y)
-    {
+    public double safeDiv(int x, int y) {
         double result;
-        if(y!= 0)
-        {
+        if(y!= 0) {
             result = x/y;
-        }
-        else
-        {
+        } else {
             return 0;
         }
         return result;
     }
-    public  String makeDecision(int x, int y)
-    {
-        if (x > y)
-        {
+    public  String makeDecision(int x, int y) {
+        if (x > y) {
             return (x + ">" + y);
         }
-        if(x < y)
-        {
+        if(x < y) {
             return (x + "<" + y);
-        }
-        else
-        {
+        } else {
             return (x + "==" + y);
         }
     }
-    public boolean sum3(int x, int y, int z)
-    {
-        if((x + y) == z)
-        {
+    public boolean sum3(int x, int y, int z) {
+        if((x + y) == z) {
             return true;
-        }
-        else if((x + z) == y)
-        {
+        } else if((x + z) == y) {
             return true;
-        }
-        else if((y + z) == x)
-        {
+        } else if((y + z) == x) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
-    public String age(int x)
-    {
+    public String age(int x) {
         int last = x % 10;
-        if(last == 1 && x != 11)
-        {
+        if(last == 1 && x != 11) {
             return (x + " год");
         }
-        if((last == 2 || last ==3 || last == 4) && x != 12 && x!= 13 && x!= 14)
-        {
+        if((last == 2 || last ==3 || last == 4) && x != 12 && x!= 13 && x!= 14) {
             return (x + " года");
-        }
-        else
-        {
+        } else {
             return (x + " лет");
         }
     }
-    public void printDay(String x)
-    {
+    public void printDay(String x) {
 
-        switch (x)
-        {
-            case "понедельник", "Понедельник":
-            {
+        switch (x) {
+            case "понедельник", "Понедельник": {
                 System.out.println("Понедельник");
             }
-            case "вторник", "Вторник":
-            {
+            case "вторник", "Вторник": {
                 System.out.println("Вторник");
             }
-            case "среда", "Среда":
-            {
+            case "среда", "Среда": {
                 System.out.println("Среда");
             }
-            case "четверг", "Четверг":
-            {
+            case "четверг", "Четверг": {
                 System.out.println("Четверг");
             }
-            case "пятница","Пятница":
-            {
+            case "пятница","Пятница": {
                 System.out.println("Пятница");
             }
-            case "суббота", "Суббота":
-            {
+            case "суббота", "Суббота": {
                 System.out.println("Суббота");
             }
-            case "воскресенье", "Воскресенье":
-            {
+            case "воскресенье", "Воскресенье": {
                 System.out.println("Воскресенье");
                 break;
             }
-            default:
-            {
+            default: {
                 System.out.println("Это не день недели!");
                 break;
             }
         }
-
     }
-    public String reverseListNums(int x)
-    {
+    public String reverseListNums(int x) {
         String result = "";
-        if(x > 0)
-        {
-            for(int i=x; i>=0; i--)
-            {
+        if(x > 0) {
+            for(int i=x; i>=0; i--) {
                 result += i + " ";
             }
-        }
-        else
-        {
-            for(int i=x; i<=0; i++)
-            {
+        } else {
+            for(int i=x; i<=0; i++) {
                 result += i + " ";
             }
         }
         return result;
     }
-    public int pow(int x, int y)
-    {
+    public int pow(int x, int y) {
         int result=1;
 
-        for (int i = 0; i < y; i++)
-        {
+        for (int i = 0; i < y; i++) {
             result *= x;
         }
-        if(y < 0)
-        {
+        if(y < 0) {
             return 0;
         }
         return result;
     }
-    public boolean equalNum(int x)
-    {
+    public boolean equalNum(int x) {
         int last, penultimate;
         last = x%10;
         x=x/10;
-        while(x>0)
-        {
+        while(x>0) {
             penultimate = x%10;
-            if(penultimate != last)
-            {
+            if(penultimate != last) {
                 return false;
             }
             x = x/10;
         }
         return true;
     }
-    public void leftTriangle(int x)
-    {
-        for(int i = 1; i<=x; i++)
-        {
-            for (int j = 1; j<= i;j++)
-            {
+    public void leftTriangle(int x) {
+        for(int i = 1; i<=x; i++) {
+            for (int j = 1; j<= i;j++) {
                 System.out.print("*");
             }
             System.out.println(" ");
         }
     }
-    public void guessGame()
-    {
+    public void guessGame() {
         int x,y, count=0;
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         y = random.nextInt(0,9);
-        do
-        {
+        do {
             System.out.println("Введите число от 0 до 9: ");
-            while(true)
-            {
+            while(true) {
                 x = scanner.nextInt();
-                if(x >= 0 && x <= 9)
-                {
+                if(x >= 0 && x <= 9) {
                     break;
-                }
-                else
-                {
+                } else {
                     System.out.println("Ошибка, нужно ввести число от 0 до 9!");
                 }
             }
             count++;
-            if(x == y)
-            {
+            if(x == y) {
                 System.out.println("Вы угадали!");
             }
-            if(x!=y)
-            {
+            if(x!=y) {
                 System.out.println("Вы не угадали загаданное число, попробуйте снова ");
             }
         }while (x!=y);
         System.out.println("Число попыток: "+ count);
     }
-    public int findLast(int[] arr, int x)
-    {
-       for(int i=arr.length-1; i>=1; i--)
-       {
-           if(arr[i] == x)
-           {
+    public int findLast(int[] arr, int x) {
+       for(int i=arr.length-1; i>=1; i--) {
+           if(arr[i] == x) {
                return i;
            }
        }
        return -1;
     }
-    public int[] add (int[] arr, int x, int pos)
-    {
+    public int[] add (int[] arr, int x, int pos) {
         int[] add = new int[arr.length + 1];
-        for (int i = 0; i < pos; i++)
-        {
+        for (int i = 0; i < pos; i++) {
             add[i] = arr[i];
         }
         add[pos] = x;
-        for(int i = pos; i < arr.length; i++)
-        {
+        for(int i = pos; i < arr.length; i++) {
             add[i + 1] = arr[i];
         }
         return add;
     }
-    public void reverse (int[] arr)
-    {
-        for(int i = arr.length-1; i>=0; i--)
-        {
+    public void reverse (int[] arr) {
+        for(int i = arr.length-1; i>=0; i--) {
             System.out.print(arr[i]+ " ");
         }
     }
-    public int[] concat(int[] arr1, int[]arr2)
-    {
+    public int[] concat(int[] arr1, int[]arr2) {
         int[] concat = new int[arr1.length + arr2.length];
-        for(int i = 0; i<arr1.length; i++)
-        {
+        for(int i = 0; i<arr1.length; i++) {
             concat[i] = arr1[i];
         }
-        for(int i = 0; i<arr2.length; i++)
-        {
+        for(int i = 0; i<arr2.length; i++) {
             concat[i+arr1.length]= arr2[i];
         }
         return concat;
     }
-    public int[] deleteNegative (int[] arr)
-    {
+    public int[] deleteNegative (int[] arr) {
         int count=0;
-        for(int i = 0; i<arr.length; i++)
-        {
-            if(arr[i]>=0)
-            {
+        for(int i = 0; i<arr.length; i++) {
+            if(arr[i]>=0) {
                 count++;
             }
         }
         int[] arr2 = new int[count];
         int j = 0;
-        for(int i = 0; i<arr.length; i++)
-        {
-            if(arr[i] >= 0)
-            {
+        for(int i = 0; i<arr.length; i++) {
+            if(arr[i] >= 0) {
                 arr2[j] = arr[i];
                 j++;
             }
