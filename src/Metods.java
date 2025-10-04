@@ -134,7 +134,7 @@ public class Metods {
         x=x/10;
         while(x>0) {
             penultimate = x%10;
-            if(penultimate != last) {
+            if(penultimate != last){
                 return false;
             }
             x = x/10;
